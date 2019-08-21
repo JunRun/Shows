@@ -1,15 +1,15 @@
 package controllers
 
 import (
+	"github.com/Shows/models"
 	"github.com/astaxie/beego"
-	"myFirstProject/models"
 )
 
 type HomeController struct {
 	beego.Controller
 }
 
-func (home *HomeController)Home()  {
+func (home *HomeController) Home() {
 	var list []models.Manga
 	var moviesList []models.Movie
 	list = models.GetMangaList()
@@ -18,5 +18,5 @@ func (home *HomeController)Home()  {
 	home.Data["mangaList"] = list
 	home.Data["moviesList"] = moviesList
 	home.Data["movieCount"] = models.CountMovies()
-	home.TplName="home.html"
+	home.TplName = "home.html"
 }

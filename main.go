@@ -1,14 +1,14 @@
 package main
 
 import (
+	_ "github.com/Shows/init"
+	_ "github.com/Shows/models"
+	_ "github.com/Shows/routers"
 	"github.com/astaxie/beego"
-	_ "myFirstProject/init"
-	_ "myFirstProject/models"
-	_ "myFirstProject/routers"
 )
 
 func main() {
-
+	beego.SetStaticPath("/episode_files", "static/episode_file")
 	beego.Run()
 
 }
