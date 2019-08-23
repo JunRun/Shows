@@ -1,6 +1,9 @@
 package models
 
-import "github.com/astaxie/beego/orm"
+import (
+	"github.com/astaxie/beego/orm"
+	"math"
+)
 
 type Movie struct {
 	Id        string `orm:"pk"`
@@ -14,18 +17,25 @@ type Movie struct {
 	Info      string
 }
 
-func QueryMovies() []Movie {
+var pageRange int = 30
+
+func QueryMovies(pageIndex int) []Movie {
 	o := orm.NewOrm()
 	var list []Movie
-	_, _ = o.Raw("select * from movie order by movie_mark desc limit ?,?", 1, 20).QueryRows(&list)
+	b := pageIndex == 0
+	if b {
+		pageIndex = pageIndex + 1
+	}
+	_, _ = o.Raw("select * from movie order by movie_mark desc limit ?,?", (pageIndex-1)*pageRange, pageIndex*pageRange).QueryRows(&list)
 	return list
 }
 
-func CountMovies() int {
+func CountMovies() (int, int) {
 	o := orm.NewOrm()
 	var count int
 	_ = o.Raw("select count(*) from movie").QueryRow(&count)
-	return count
+	pageNum := math.Ceil(float64(count) / float64(pageRange))
+	return count, int(pageNum)
 }
 
 func GetMovie(id string) Movie {

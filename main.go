@@ -4,11 +4,13 @@ import (
 	_ "github.com/Shows/init"
 	_ "github.com/Shows/models"
 	_ "github.com/Shows/routers"
+	"github.com/Shows/temp_func"
 	"github.com/astaxie/beego"
 )
 
 func main() {
-	beego.SetStaticPath("/episode_files", "static/episode_file")
+	beego.SetStaticPath("/episode/episode_files", "static/episode_file")
+	beego.AddFuncMap("add", temp_func.Add)
 	beego.Run()
 
 }
