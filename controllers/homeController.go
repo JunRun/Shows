@@ -3,6 +3,7 @@ package controllers
 import (
 	"github.com/Shows/models"
 	"github.com/astaxie/beego"
+	"math/rand"
 )
 
 type HomeController struct {
@@ -10,10 +11,12 @@ type HomeController struct {
 }
 
 func (home *HomeController) Home() {
+
 	var list []models.Manga
 	var moviesList []models.Movie
 	list = models.GetMangaList()
-	moviesList = models.QueryMovies(0)
+	randPage := rand.Intn(5)
+	moviesList = models.QueryMovies(randPage)
 	home.Data["mangaCount"] = models.CountManga()
 	home.Data["mangaList"] = list
 	home.Data["moviesList"] = moviesList

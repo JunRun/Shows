@@ -1,0 +1,526 @@
+{{template "common/header.html"}}
+    <div id="contenedor">
+        <div class="login_box">
+            <div class="box"><a id="c_loginbox"><i class="icon-close2"></i></a>
+                <h3>Login to your account</h3>
+                <form method="post" action="https://watchtvepisodes.me/warlam/">
+                    <fieldset class="user"><input type="text" name="log" placeholder="Username"></fieldset>
+                    <fieldset class="password"><input type="password" name="pwd" placeholder="Password"></fieldset>
+                    <label><input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me</label>
+                    <fieldset class="submit"><input type="submit" value="Log in"></fieldset>
+                    <a class="register" href="https://watchtvepisodes.me/account-3/?action=sign-in">Register a new
+                        account</a> <label><a class="pteks"
+                                              href="https://watchtvepisodes.me/warlam/?action=lostpassword">Lost your
+                            password?</a></label> <input type="hidden" name="redirect_to"
+                                                         value="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/">
+                </form>
+            </div>
+        </div>
+        <div id="single" class="dtsingle">
+            <div class="content">
+                <div class="sheader">
+                    <div class="poster"><img src="{{.Video.ImgUrl}}"
+                                             alt="{{.VIdeo.MovieName}}"></div>
+                    <div class="data"><h1>{{.VIdeo.MovieName}}</h1>
+                        <div class="extra"><span class="date">Aug. 18, 2019</span> <span><a
+                                        href="https://watchtvepisodes.me/network/hbo/" rel="tag">HBO</a></span></div>
+                        <div class="starstruck-ptype" style="">
+                            <div itemscope="" itemtype="http://schema.org/Service">
+                                <meta itemprop="name" content="{{.VIdeo.MovieName}}">
+                                <div itemscope="" class="starstruck-wrap" itemprop="aggregateRating"
+                                     itemtype="http://schema.org/AggregateRating">
+                                    <meta itemprop="bestRating" content="10">
+                                    <meta itemprop="worstRating" content="1">
+                                    <div class="dt_rating_data">
+                                        <div class="starstruck starstruck-main " data-id="124661" data-rating="10"
+                                             data-type="post" style="cursor: pointer;"><i data-alt="1" class="star-on-png" title="+1"></i>&nbsp;<i
+                                                    data-alt="2" class="star-on-png" title="+2"></i>&nbsp;<i
+                                                    data-alt="3" class="star-on-png" title="+3"></i>&nbsp;<i
+                                                    data-alt="4" class="star-on-png" title="+4"></i>&nbsp;<i
+                                                    data-alt="5" class="star-on-png" title="+5"></i>&nbsp;
+                                            <input name="score" type="hidden" value="5"></div>
+
+                                        <div class="starstruck-rating"><span class="dt_rating_vgs"
+                                                                             itemprop="ratingValue">5</span><i
+                                                    class="icon-account_circle"></i> <span class="rating-count"
+                                                                                           itemprop="ratingCount">{{.Video.MovieMark}}</span>
+                                            <span class="rating-text">vote</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="episodes" class="sbox fixidtab" style="display: none;"><h2>Seasons and episodes</h2>
+                    <div id="serie_contenido">
+                        <div id="seasons">
+                            <div class="se-c">
+                                <div class="se-q"><span class="se-t se-o">1</span><span class="title">Season 1 <i>Aug. 18, 2019</i></span>
+                                </div>
+                                <div class="se-a" style="display:block">
+                                    <ul class="episodios">
+                                        {{range .List}}
+                                        <li>
+                                            <div class="numerando">{{.EpisodeNumber}}</div>
+                                            <div class="episodiotitle"><a href="/episode/player/{{.Id}}">
+                                                    {{.EpisodeNumber}}</a><span class="date"></span></div>
+                                        </li>
+                                        {{end}}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>jQuery(document).ready(function ($) {
+                        $(".se-q").click(function () {
+                            var container = $(this).parents(".se-c");
+                            var answer = container.find(".se-a");
+                            var trigger = container.find(".se-t");
+                            answer.slideToggle(200);
+                            if (trigger.hasClass("se-o")) {
+                                trigger.removeClass("se-o");
+                            } else {
+                                trigger.addClass("se-o");
+                            }
+                        })
+                    });</script>
+                <div class="single_tabs">
+                    <ul id="section" class="smenu idTabs">
+                        <li><a href="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/#episodes" class="">Episodes</a>
+                        </li>
+                        <li><a href="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/#info" class="selected">Info</a>
+                        </li>
+                        <li><a href="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/#cast">Cast</a></li>
+                        <li><a href="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/#trailer">Trailer</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="cast" class="sbox fixidtab" style="display: none;"><h2>Creator</h2>
+                    <div class="persons">
+                        <div class="person">
+                            <div class="img"><a href="https://watchtvepisodes.me/creator/danny-mcbride/"><img
+                                            alt="Danny McBride"
+                                            src="./episode_files/44DW4hNukuxNhGwyMScNNKhwflN.jpg"></a></div>
+                            <div class="data">
+                                <div class="name"><a href="https://watchtvepisodes.me/creator/danny-mcbride/">Danny
+                                        McBride</a></div>
+                                <div class="caracter">Creator</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Cast</h2>
+                    <div class="persons">
+                        <div class="person">
+                            <div class="img"><a href="https://watchtvepisodes.me/cast/john-goodman/"><img
+                                            alt="John Goodman isEli Gemstone"
+                                            src="./episode_files/eOIx8zj1vYIRhVY2bK5cjIQfua0.jpg"></a></div>
+                            <div class="data">
+                                <div class="name"><a href="https://watchtvepisodes.me/cast/john-goodman/">John
+                                        Goodman</a></div>
+                                <div class="caracter">Eli Gemstone</div>
+                            </div>
+                        </div>
+                        <div class="person">
+                            <div class="img"><a href="https://watchtvepisodes.me/cast/danny-mcbride/"><img
+                                            alt="Danny McBride isJesse Gemstone"
+                                            src="./episode_files/44DW4hNukuxNhGwyMScNNKhwflN.jpg"></a></div>
+                            <div class="data">
+                                <div class="name"><a href="https://watchtvepisodes.me/cast/danny-mcbride/">Danny
+                                        McBride</a></div>
+                                <div class="caracter">Jesse Gemstone</div>
+                            </div>
+                        </div>
+                        <div class="person">
+                            <div class="img"><a href="https://watchtvepisodes.me/cast/edi-patterson/"><img
+                                            alt="Edi Patterson isJudy Gemstone"
+                                            src="./episode_files/3gu1NapOLsOWRbFRZQHRGgWSVp8.jpg"></a></div>
+                            <div class="data">
+                                <div class="name"><a href="https://watchtvepisodes.me/cast/edi-patterson/">Edi
+                                        Patterson</a></div>
+                                <div class="caracter">Judy Gemstone</div>
+                            </div>
+                        </div>
+                        <div class="person">
+                            <div class="img"><a href="https://watchtvepisodes.me/cast/adam-devine/"><img
+                                            alt="Adam Devine isKelvin Gemstone"
+                                            src="./episode_files/6qDsS9jcywuajS7gB8gLuQRJ7Um.jpg"></a></div>
+                            <div class="data">
+                                <div class="name"><a href="https://watchtvepisodes.me/cast/adam-devine/">Adam Devine</a>
+                                </div>
+                                <div class="caracter">Kelvin Gemstone</div>
+                            </div>
+                        </div>
+                        <div class="person">
+                            <div class="img"><a href="https://watchtvepisodes.me/cast/cassidy-freeman/"><img
+                                            alt="Cassidy Freeman isAmber Gemstone"
+                                            src="./episode_files/mFbIpBeB3foI4GICcoama3jIUcg.jpg"></a></div>
+                            <div class="data">
+                                <div class="name"><a href="https://watchtvepisodes.me/cast/cassidy-freeman/">Cassidy
+                                        Freeman</a></div>
+                                <div class="caracter">Amber Gemstone</div>
+                            </div>
+                        </div>
+                        <div class="person">
+                            <div class="img"><a href="https://watchtvepisodes.me/cast/tony-cavalero/"><img
+                                            alt="Tony Cavalero isKeefe Chambers"
+                                            src="./episode_files/grIQhizlwrJcFVZ8UxN3H1GkKfw.jpg"></a></div>
+                            <div class="data">
+                                <div class="name"><a href="https://watchtvepisodes.me/cast/tony-cavalero/">Tony
+                                        Cavalero</a></div>
+                                <div class="caracter">Keefe Chambers</div>
+                            </div>
+                        </div>
+                        <div class="person">
+                            <div class="img"><a href="https://watchtvepisodes.me/cast/tim-baltz/"><img
+                                            alt="Tim Baltz isBJ" src="./episode_files/1RSBHbzYew4Y5vFNMztApclgXmi.jpg"></a>
+                            </div>
+                            <div class="data">
+                                <div class="name"><a href="https://watchtvepisodes.me/cast/tim-baltz/">Tim Baltz</a>
+                                </div>
+                                <div class="caracter">BJ</div>
+                            </div>
+                        </div>
+                        <div class="person">
+                            <div class="img"><a href="https://watchtvepisodes.me/cast/gregory-alan-williams/"><img
+                                            alt="Gregory Alan Williams isMartin Imari"
+                                            src="./episode_files/3IM9qtI4c4zgraPNtRI3kCPivAo.jpg"></a></div>
+                            <div class="data">
+                                <div class="name"><a href="https://watchtvepisodes.me/cast/gregory-alan-williams/">Gregory
+                                        Alan Williams</a></div>
+                                <div class="caracter">Martin Imari</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="trailer" class="sbox fixidtab" style="display: none;"><h2>Video trailer</h2>
+                    <div class="videobox">
+                        <div class="embed">
+                            <iframe class="rptss" src="./episode_files/KqJRIQO7sqw.html" frameborder="0"
+                                    allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div id="info" class="sbox fixidtab" style="display: block;"><h2>Synopsis</h2>
+                    <div class="wp-content"><p>{{.Video.DeInfo}}</p>
+                        <div id="dt_galery" class="galeria owl-carousel owl-theme" style="opacity: 1; display: block;">
+                            <div class="owl-wrapper-outer">
+                                <div class="owl-wrapper"
+                                     style="width: 1040px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+                                    <div class="owl-item" style="width: 260px;">
+                                        <div class="g-item"><a
+                                                    href="{{.Video.ImgUrl}}"
+                                                    title="{{.Video.DeName}}"><img alt="{{.Video.MovieName}}"
+                                                                                         src="{{.Video.ImgUrl}}"></a>
+                                        </div>
+                                    </div>
+                                    <div class="owl-item" style="width: 260px;">
+                                        <div class="g-item"><a
+                                                    href="{{.Video.ImgUrl}}"
+                                                    title="{{.Video.DeName}}"><img alt="{{.Video.MovieName}}"
+                                                                                         src="{{.Video.ImgUrl}}"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-controls clickable" style="display: none;">
+                                <div class="owl-pagination">
+                                    <div class="owl-page"><span class=""></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom_fields"><b class="variante">Original title</b>
+                        <span class="valor">{{.Video.DeName}}</span>
+                    </div>
+                    <div class="custom_fields"><b class="variante">Stichworte</b> <span class="valor">{{.Video.MovieType}}</span></div>
+                    <div class="custom_fields"><b class="variante">Episodes</b> <span class="valor">6</span></div>
+                    <div class="custom_fields"><b class="variante">Duration</b> <span class="valor">60m</span></div>
+                </div>
+                <div class="dt-breadcrumb breadcrumb_bottom">
+                    <ol vocab="http://schema.org/" typeof="BreadcrumbList">
+                        <li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage"
+                                                                            href="https://watchtvepisodes.me/"><span
+                                        property="name">Home</span></a><span class="icon-angle-right"
+                                                                             property="position" content="1"></span>
+                        </li>
+                        <li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage"
+                                                                            href="https://watchtvepisodes.me/tvshows/"><span
+                                        property="name">TV Shows</span></a><span class="icon-angle-right"
+                                                                                 property="position" content="2"></span>
+                        </li>
+                        <li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage"
+                                                                            href="/episode/{{.Video.Id}}}"><span
+                                        property="name">{{.VIdeo.MovieName}}</span></a><span property="position"
+                                                                                                content="3"></span></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="sidebar scrolling mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar"
+                 style="overflow: visible;">
+                <div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" tabindex="0">
+                    <div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+                         style="position:relative; top:0; left:0;" dir="ltr">
+                        <aside id="text-18" class="widget widget_text"><h2 class="widget-title">Info :</h2>
+                            <div class="textwidget">
+                                <div class="info2">First click may open some <strong>ads</strong>. We know ads can be a
+                                    pain, but they are our only way to maintain the server. Your patience is highly
+                                    appreciated. Thank You!
+                                </div>
+                                <div class="info2">If you get Openload Video Ads, just Refresh the page to SKIP the Ads.
+                                    Also if you have questions you can visit our FAQ here : <strong><a
+                                                href="https://watchtvepisodes.me/faq/">Frequently Asked
+                                            Questions</a></strong></div>
+                            </div>
+                        </aside>
+                        <style>.rpwe-block ul {
+                                list-style: none !important;
+                                margin-left: 0 !important;
+                                padding-left: 0 !important
+                            }
+
+                            .rpwe-block li {
+                                border-bottom: 1px solid #eee;
+                                margin-bottom: 10px;
+                                padding-bottom: 10px;
+                                list-style-type: none
+                            }
+
+                            .rpwe-block a {
+                                display: inline !important;
+                                text-decoration: none
+                            }
+
+                            .rpwe-block h3 {
+                                background: none !important;
+                                clear: none;
+                                margin-bottom: 0 !important;
+                                margin-top: 0 !important;
+                                font-weight: 400;
+                                font-size: 12px !important;
+                                line-height: 1.5em
+                            }
+
+                            .rpwe-thumb {
+                                border: 1px solid #EEE !important;
+                                box-shadow: none !important;
+                                margin: 2px 10px 2px 0;
+                                padding: 3px !important
+                            }
+
+                            .rpwe-summary {
+                                font-size: 12px
+                            }
+
+                            .rpwe-time {
+                                color: #bbb;
+                                font-size: 11px
+                            }
+
+                            .rpwe-comment {
+                                color: #bbb;
+                                font-size: 11px;
+                                padding-left: 5px
+                            }
+
+                            .rpwe-alignleft {
+                                display: inline;
+                                float: left
+                            }
+
+                            .rpwe-alignright {
+                                display: inline;
+                                float: right
+                            }
+
+                            .rpwe-aligncenter {
+                                display: block;
+                                margin-left: auto;
+                                margin-right: auto
+                            }
+
+                            .rpwe-clearfix:before, .rpwe-clearfix:after {
+                                content: "";
+                                display: table !important
+                            }
+
+                            .rpwe-clearfix:after {
+                                clear: both
+                            }
+
+                            .rpwe-clearfix {
+                                zoom: 1
+                            }</style>
+                        <aside id="rpwe_widget-5" class="widget rpwe_widget recent-posts-extended"><h2
+                                    class="widget-title">Most newest added episode:</h2>
+                            <div class="rpwe-block ">
+                                <ul class="rpwe-ul">
+                                    <li class="rpwe-li rpwe-clearfix"><a class="rpwe-img"
+                                                                         href="https://watchtvepisodes.me/episodes/australian-survivor-season-6-episode-14-s06e14/"
+                                                                         rel="bookmark"><img
+                                                    class="rpwe-alignleft rpwe-thumb rpwe-default-thumb"
+                                                    src="./episode_files/NETFLIX-openload-18.jpg"
+                                                    alt="Australian Survivor: Season 6 Episode 14 S06E14" width="45"
+                                                    height="45"></a>
+                                        <h3 class="rpwe-title"><a
+                                                    href="https://watchtvepisodes.me/episodes/australian-survivor-season-6-episode-14-s06e14/"
+                                                    title="Permalink to Australian Survivor: Season 6 Episode 14 S06E14"
+                                                    rel="bookmark">Australian Survivor: Season 6 Episode 14 S06E14</a>
+                                        </h3>
+                                        <time class="rpwe-time published" datetime="2019-08-20T14:56:33+00:00">August
+                                            20, 2019
+                                        </time>
+                                    </li>
+                                    <li class="rpwe-li rpwe-clearfix"><a class="rpwe-img"
+                                                                         href="https://watchtvepisodes.me/episodes/golden-boy-season-1-episode-6-s01e06/"
+                                                                         rel="bookmark"><img
+                                                    class="rpwe-alignleft rpwe-thumb"
+                                                    src="./episode_files/pYY1WDfF6wxcrcKeD45PoGz16M3-45x45.jpg"
+                                                    alt="Golden Boy: Season 1 Episode 6 S01E06"></a>
+                                        <h3 class="rpwe-title"><a
+                                                    href="https://watchtvepisodes.me/episodes/golden-boy-season-1-episode-6-s01e06/"
+                                                    title="Permalink to Golden Boy: Season 1 Episode 6 S01E06"
+                                                    rel="bookmark">Golden Boy: Season 1 Episode 6 S01E06</a></h3>
+                                        <time class="rpwe-time published" datetime="2019-08-20T14:55:25+00:00">August
+                                            20, 2019
+                                        </time>
+                                    </li>
+                                    <li class="rpwe-li rpwe-clearfix"><a class="rpwe-img"
+                                                                         href="https://watchtvepisodes.me/episodes/i-ship-it-season-2-episode-1-s02e01/"
+                                                                         rel="bookmark"><img
+                                                    class="rpwe-alignleft rpwe-thumb rpwe-default-thumb"
+                                                    src="./episode_files/NETFLIX-openload-18.jpg"
+                                                    alt="I Ship It: Season 2 Episode 1 S02E01" width="45"
+                                                    height="45"></a>
+                                        <h3 class="rpwe-title"><a
+                                                    href="https://watchtvepisodes.me/episodes/i-ship-it-season-2-episode-1-s02e01/"
+                                                    title="Permalink to I Ship It: Season 2 Episode 1 S02E01"
+                                                    rel="bookmark">I Ship It: Season 2 Episode 1 S02E01</a></h3>
+                                        <time class="rpwe-time published" datetime="2019-08-20T14:54:46+00:00">August
+                                            20, 2019
+                                        </time>
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+                        </aside>
+                    </div>
+                </div>
+                <div id="mCSB_1_scrollbar_vertical"
+                     class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical"
+                     style="display: none;">
+                    <div class="mCSB_draggerContainer">
+                        <div id="mCSB_1_dragger_vertical" class="mCSB_dragger"
+                             style="position: absolute; min-height: 50px; display: block; height: 0px; max-height: 575px; top: 0px;"
+                             oncontextmenu="return false;">
+                            <div class="mCSB_dragger_bar" style="line-height: 50px;"></div>
+                        </div>
+                        <div class="mCSB_draggerRail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="main">
+        <div class="fbox">
+            <div class="fcmpbox">
+                <div class="primary">
+                    <div class="columenu">
+                    </div>
+                    <div class="fotlogo">
+                        <div class="logo">
+                            <img src="./episode_files/Logomare(1).png"
+                                               alt="WatchTVEpisodes | Watch Openload Movies Tv Shows Online For Free">
+                        </div>
+                    </div>
+                </div>
+                <span class="top-page"><a id="top-page"><i class="icon-angle-up"></i></a></span>
+                <div class="fmenu">
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script type="text/javascript">jQuery(document).ready(function ($) {
+        $('#dt_galery').owlCarousel({
+            items: 3,
+            autoPlay: false,
+            itemsDesktop: [1199, 3],
+            itemsDesktopSmall: [980, 3],
+            itemsTablet: [768, 3],
+            itemsTabletSmall: false,
+            itemsMobile: [479, 1]
+        });
+        $('#dt_galery_ep').owlCarousel({items: 2, autoPlay: false});
+        $('#single_relacionados').owlCarousel({
+            items: 6,
+            autoPlay: 3000,
+            stopOnHover: true,
+            pagination: false,
+            itemsDesktop: [1199, 6],
+            itemsDesktopSmall: [980, 6],
+            itemsTablet: [768, 5],
+            itemsTabletSmall: false,
+            itemsMobile: [479, 3]
+        });
+        $('.reset').click(function (event) {
+            if (!confirm(dtGonza.reset_all)) {
+                event.preventDefault()
+            }
+        });
+        $('.addcontent').click(function (event) {
+            if (!confirm(dtGonza.manually_content)) {
+                event.preventDefault()
+            }
+        });
+    });
+    document.getElementById('dt_galery').onclick = function (a) {
+        a = a || window.event;
+        var b = a.target || a.srcElement, c = b.src ? b.parentNode : b, d = {index: c, event: a},
+            e = this.getElementsByTagName('a');
+        blueimp.Gallery(e, d)
+    };</script>
+<script type="text/javascript">
+    var wpcf7 = {
+        "apiSettings": {
+            "root": "https:\/\/watchtvepisodes.me\/wp-json\/contact-form-7\/v1",
+            "namespace": "contact-form-7\/v1"
+        }, "cached": "1"
+    };
+</script>
+<script type="text/javascript" src="./episode_files/scripts.js"></script>
+<script type="text/javascript" src="./episode_files/front.scripts.2.2.0.js"></script>
+<script type="text/javascript" src="./episode_files/comment-reply.min.js"></script>
+<script type="text/javascript">
+    var dtGonza = {
+        "api": "https:\/\/watchtvepisodes.me\/wp-json\/dooplay\/search\/",
+        "glossary": "https:\/\/watchtvepisodes.me\/wp-json\/dooplay\/glossary\/",
+        "nonce": "e17f2b22f3",
+        "area": ".live-search",
+        "button": ".search-button",
+        "more": "View all results",
+        "mobile": "false",
+        "reset_all": "Really you want to restart all data?",
+        "manually_content": "They sure have added content manually?",
+        "loading": "Loading..",
+        "loadingplayer": "Loading player..",
+        "selectaplayer": "Select a video player",
+        "playeradstime": null,
+        "autoplayer": "1",
+        "livesearchactive": ""
+    };
+</script>
+<script type="text/javascript" src="./episode_files/front.livesearch.2.2.0.js"></script>
+<script type="text/javascript" src="./episode_files/wp-embed.min.js"></script>
+<div id="oscuridad"></div>
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3> <a class="prev">‹</a> <a class="next">›</a> <a class="close">×</a> <a
+            class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+<script src="./episode_files/saved_resource"></script>
+<script src="./episode_files/c"></script>
+</body>
+</html>

@@ -7,9 +7,11 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func init(){
+func init() {
 	orm.Debug = true
+	fmt.Println(beego.AppConfig.String("mysql_username"))
 	username := beego.AppConfig.String("mysql_username")
+
 	password := beego.AppConfig.String("mysql_password")
 	database := beego.AppConfig.String("mysql_database")
 	host := beego.AppConfig.String("mysql_host")

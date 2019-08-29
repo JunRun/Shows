@@ -1,0 +1,82 @@
+{{template "common/header.html"}}
+    <div id="contenedor">
+        <div class="login_box">
+            <div class="box"> <a id="c_loginbox"><i class="icon-close2"></i></a>
+                <h3>Login to your account</h3>
+                <form method="post" action="https://watchtvepisodes.me/warlam/">
+                    <fieldset class="user"><input type="text" name="log" placeholder="Username"></fieldset>
+                    <fieldset class="password"><input type="password" name="pwd" placeholder="Password"></fieldset>
+                    <label><input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me</label>
+                    <fieldset class="submit"><input type="submit" value="Log in"></fieldset> <a class="register"
+                                                                                                href="https://watchtvepisodes.me/account-3/?action=sign-in">Register a new account</a> <label><a
+                                class="pteks" href="https://watchtvepisodes.me/warlam/?action=lostpassword">Lost your
+                            password?</a></label> <input type="hidden" name="redirect_to"
+                                                         value="https://watchtvepisodes.me/episodes/the-flay-list-season-1-episode-1-s01e01/">
+                </form>
+            </div>
+        </div>
+        <style>
+            #seasons .se-c .se-a ul.episodios li.mark-1 {
+                opacity: 0.2
+            }
+        </style>
+        <div class="dooplay_player">
+            <div id="playcontainer" class="play bigger">
+                <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.2/skins/default/aliplayer-min.css" />
+                <script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-min.js"></script>
+                <div class="prism-player" id="player-con"></div>
+                <script>
+                    var player = new Aliplayer({
+                            "id": "player-con",
+                            "source": "{{.M3u8}}",
+                            "width": "100%",
+                            "height": "500px",
+                            "autoplay": true,
+                            "isLive": false,
+                            "rePlay": false,
+                            "playsinline": true,
+                            "preload": true,
+                            "controlBarVisibility": "hover",
+                            "useH5Prism": true
+                        }, function (player) {
+                            console.log("The player is created");
+                        }
+                    );
+                </script>
+            </div>
+        </div>
+        <div id="single" class="dtsingle">
+            <div id="edit_link"></div>
+            <div class="content">
+                <div class="sbox">
+                    <h2>Episodenliste</h2>
+                    <div id="serie_contenido" style="padding-top:0">
+                        <div id="seasons">
+                            <div class="se-c">
+                                <div class="se-a" style='display:block'>
+                                    {{range .List}}
+                                    <ul class="episodios">
+                                        <li class="mark-1">
+                                            <div class="numerando">{{.EpisodeNumber}}</div>
+                                            <div class="episodiotitle"><a
+                                                        href="/episode/player/{{.Id}}">{{.EpisodeName}}</a>
+                                                <span class="date"></span></div>
+                                        </li>
+                                            {{end}}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="info" class="sbox">
+                    <h1 class="epih1">{{.EpisodeName}}</h1>
+                    <div itemprop="description" class="wp-content">
+                        <h3 class="epih3"></h3>
+                        <p>{{.Info}}</p>
+                    </div><span class="date"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+{{template "common/footer.html"}}

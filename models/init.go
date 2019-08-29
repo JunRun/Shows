@@ -1,7 +1,11 @@
 package models
 
-import "github.com/astaxie/beego/orm"
+import (
+	"fmt"
+	"github.com/astaxie/beego/orm"
+)
 
 func init() {
-	orm.RegisterModel(new(Manga),new(Movie))
+	fmt.Print("dadas")
+	orm.RegisterModel(new(Manga), new(Movie))
 }

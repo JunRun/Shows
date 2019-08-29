@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+
 	beego.SetStaticPath("/episode/episode_files", "static/episode_file")
 	beego.AddFuncMap("add", temp_func.Add)
 	beego.Run()

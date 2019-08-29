@@ -15,9 +15,11 @@ type Movie struct {
 	MovieMark string
 	MovieYear string
 	Info      string
+	DeName    string
+	DeInfo    string
 }
 
-var pageRange int = 30
+var pageRange int = 15
 
 func QueryMovies(pageIndex int) []Movie {
 	o := orm.NewOrm()
@@ -26,7 +28,7 @@ func QueryMovies(pageIndex int) []Movie {
 	if b {
 		pageIndex = pageIndex + 1
 	}
-	_, _ = o.Raw("select * from movie order by movie_mark desc limit ?,?", (pageIndex-1)*pageRange, pageIndex*pageRange).QueryRows(&list)
+	_, _ = o.Raw("select * from movie order by movie_mark desc limit ?,?", (pageIndex-1)*pageRange, pageRange).QueryRows(&list)
 	return list
 }
 
@@ -42,5 +44,12 @@ func GetMovie(id string) Movie {
 	var movie Movie
 	o := orm.NewOrm()
 	_ = o.Raw("select * from movie where id = ?", id).QueryRow(&movie)
+	return movie
+}
+
+func GetMovieName(name string) []Movie {
+	var movie []Movie
+	o := orm.NewOrm()
+	_, _ = o.Raw("select * from movie where movie_name  like ?", "%"+name+"%").QueryRows(&movie)
 	return movie
 }
