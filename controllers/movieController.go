@@ -12,7 +12,9 @@ type MovieController struct {
 //动漫页面
 func (m *MovieController) Movies() {
 	pageIndex, _ := m.GetInt(":pageIndex")
-
+	if pageIndex == 0 {
+		pageIndex = 1
+	}
 	m.Data["PageIndex"] = pageIndex
 	m.Data["moviesList"] = models.QueryMovies(pageIndex)
 	m.Data["moviesCount"], m.Data["PageCount"] = models.CountMovies()

@@ -24,10 +24,7 @@ var pageRange int = 15
 func QueryMovies(pageIndex int) []Movie {
 	o := orm.NewOrm()
 	var list []Movie
-	b := pageIndex == 0
-	if b {
-		pageIndex = pageIndex + 1
-	}
+
 	_, _ = o.Raw("select * from movie order by movie_mark desc limit ?,?", (pageIndex-1)*pageRange, pageRange).QueryRows(&list)
 	return list
 }
