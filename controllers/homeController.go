@@ -12,13 +12,9 @@ type HomeController struct {
 
 func (home *HomeController) Home() {
 
-	var list []models.Manga
 	var moviesList []models.Movie
-	list = models.GetMangaList()
 	randPage := rand.Intn(5)
 	moviesList = models.QueryMovies(randPage)
-	home.Data["mangaCount"] = models.CountManga()
-	home.Data["mangaList"] = list
 	home.Data["moviesList"] = moviesList
 	home.Data["movieCount"], _ = models.CountMovies()
 	home.TplName = "home.html"
