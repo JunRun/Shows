@@ -12,6 +12,7 @@ func main() {
 
 	beego.SetStaticPath("/episode/episode_files", "static/episode_file")
 	beego.AddFuncMap("add", temp_func.Add)
+	beego.AddFuncMap("randomImg", temp_func.RandomImage)
 	beego.Run()
 
 }

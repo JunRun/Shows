@@ -50,3 +50,10 @@ func GetMovieName(name string) []Movie {
 	_, _ = o.Raw("select * from movie where movie_name  like ?", "%"+name+"%").QueryRows(&movie)
 	return movie
 }
+
+func GetMovieByType(tags string) []Movie {
+	var movie []Movie
+	o := orm.NewOrm()
+	_, _ = o.Raw("select * from movie where movie_type like ?", "%"+tags+"%").QueryRows(&movie)
+	return movie
+}

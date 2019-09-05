@@ -50,3 +50,12 @@ func (m *MovieController) GetMovieByName() {
 	m.Data["PageCount"] = 1
 	m.TplName = "movies.html"
 }
+func (m *MovieController) GetMovieByTags() {
+	movieTags := m.GetString(":tag")
+	m.Data["moviesList"] = models.GetMovieByType(movieTags)
+	m.Data["PageIndex"] = 1
+	m.Data["moviesCount"] = 23
+	m.Data["PageCount"] = 1
+	m.TplName = "movies.html"
+
+}

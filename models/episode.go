@@ -42,6 +42,9 @@ func GetEpisodeUrl(episodeId string) (string, string) {
 	} else {
 
 	}
+	if list == nil {
+		return "", ""
+	}
 	var playerPath string
 	for _, x := range list {
 		if x.HardsubLang == "deDE" {
