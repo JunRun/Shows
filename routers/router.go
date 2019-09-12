@@ -15,4 +15,6 @@ func init() {
 	beego.Router("/episode/player/:id", &controllers.MovieController{}, "*:Player")
 	beego.Router("/home/movies/name", &controllers.MovieController{}, "*:GetMovieByName")
 	beego.Router("/movies/tags/:tag", &controllers.MovieController{}, "*:GetMovieByTags")
+	beego.Router("/movies/random", &controllers.MovieController{}, "*:GetMovieByRandom")
+	beego.Router("/movies/lasted", &controllers.MovieController{}, "*:GetMovieLasted")
 }

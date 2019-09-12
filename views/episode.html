@@ -62,7 +62,7 @@
                                     <ul class="episodios">
                                         {{range .List}}
                                         <li>
-                                            <div class="numerando">{{.EpisodeNumber}}</div>
+                                            <div class="numerando">1 - {{episodeReplace .EpisodeNumber}} </div>
                                             <div class="episodiotitle"><a href="/episode/player/{{.Id}}">
                                                     {{.EpisodeNumber}}</a><span class="date"></span></div>
                                         </li>
@@ -92,115 +92,10 @@
                         </li>
                         <li><a href="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/#info" class="selected">Info</a>
                         </li>
-                        <li><a href="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/#cast">Cast</a></li>
-                        <li><a href="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/#trailer">Trailer</a>
                         </li>
                     </ul>
                 </div>
-                <div id="cast" class="sbox fixidtab" style="display: none;"><h2>Creator</h2>
-                    <div class="persons">
-                        <div class="person">
-                            <div class="img"><a href="https://watchtvepisodes.me/creator/danny-mcbride/"><img
-                                            alt="Danny McBride"
-                                            src="./episode_files/44DW4hNukuxNhGwyMScNNKhwflN.jpg"></a></div>
-                            <div class="data">
-                                <div class="name"><a href="https://watchtvepisodes.me/creator/danny-mcbride/">Danny
-                                        McBride</a></div>
-                                <div class="caracter">Creator</div>
-                            </div>
-                        </div>
-                    </div>
-                    <h2>Cast</h2>
-                    <div class="persons">
-                        <div class="person">
-                            <div class="img"><a href="https://watchtvepisodes.me/cast/john-goodman/"><img
-                                            alt="John Goodman isEli Gemstone"
-                                            src="./episode_files/eOIx8zj1vYIRhVY2bK5cjIQfua0.jpg"></a></div>
-                            <div class="data">
-                                <div class="name"><a href="https://watchtvepisodes.me/cast/john-goodman/">John
-                                        Goodman</a></div>
-                                <div class="caracter">Eli Gemstone</div>
-                            </div>
-                        </div>
-                        <div class="person">
-                            <div class="img"><a href="https://watchtvepisodes.me/cast/danny-mcbride/"><img
-                                            alt="Danny McBride isJesse Gemstone"
-                                            src="./episode_files/44DW4hNukuxNhGwyMScNNKhwflN.jpg"></a></div>
-                            <div class="data">
-                                <div class="name"><a href="https://watchtvepisodes.me/cast/danny-mcbride/">Danny
-                                        McBride</a></div>
-                                <div class="caracter">Jesse Gemstone</div>
-                            </div>
-                        </div>
-                        <div class="person">
-                            <div class="img"><a href="https://watchtvepisodes.me/cast/edi-patterson/"><img
-                                            alt="Edi Patterson isJudy Gemstone"
-                                            src="./episode_files/3gu1NapOLsOWRbFRZQHRGgWSVp8.jpg"></a></div>
-                            <div class="data">
-                                <div class="name"><a href="https://watchtvepisodes.me/cast/edi-patterson/">Edi
-                                        Patterson</a></div>
-                                <div class="caracter">Judy Gemstone</div>
-                            </div>
-                        </div>
-                        <div class="person">
-                            <div class="img"><a href="https://watchtvepisodes.me/cast/adam-devine/"><img
-                                            alt="Adam Devine isKelvin Gemstone"
-                                            src="./episode_files/6qDsS9jcywuajS7gB8gLuQRJ7Um.jpg"></a></div>
-                            <div class="data">
-                                <div class="name"><a href="https://watchtvepisodes.me/cast/adam-devine/">Adam Devine</a>
-                                </div>
-                                <div class="caracter">Kelvin Gemstone</div>
-                            </div>
-                        </div>
-                        <div class="person">
-                            <div class="img"><a href="https://watchtvepisodes.me/cast/cassidy-freeman/"><img
-                                            alt="Cassidy Freeman isAmber Gemstone"
-                                            src="./episode_files/mFbIpBeB3foI4GICcoama3jIUcg.jpg"></a></div>
-                            <div class="data">
-                                <div class="name"><a href="https://watchtvepisodes.me/cast/cassidy-freeman/">Cassidy
-                                        Freeman</a></div>
-                                <div class="caracter">Amber Gemstone</div>
-                            </div>
-                        </div>
-                        <div class="person">
-                            <div class="img"><a href="https://watchtvepisodes.me/cast/tony-cavalero/"><img
-                                            alt="Tony Cavalero isKeefe Chambers"
-                                            src="./episode_files/grIQhizlwrJcFVZ8UxN3H1GkKfw.jpg"></a></div>
-                            <div class="data">
-                                <div class="name"><a href="https://watchtvepisodes.me/cast/tony-cavalero/">Tony
-                                        Cavalero</a></div>
-                                <div class="caracter">Keefe Chambers</div>
-                            </div>
-                        </div>
-                        <div class="person">
-                            <div class="img"><a href="https://watchtvepisodes.me/cast/tim-baltz/"><img
-                                            alt="Tim Baltz isBJ" src="./episode_files/1RSBHbzYew4Y5vFNMztApclgXmi.jpg"></a>
-                            </div>
-                            <div class="data">
-                                <div class="name"><a href="https://watchtvepisodes.me/cast/tim-baltz/">Tim Baltz</a>
-                                </div>
-                                <div class="caracter">BJ</div>
-                            </div>
-                        </div>
-                        <div class="person">
-                            <div class="img"><a href="https://watchtvepisodes.me/cast/gregory-alan-williams/"><img
-                                            alt="Gregory Alan Williams isMartin Imari"
-                                            src="./episode_files/3IM9qtI4c4zgraPNtRI3kCPivAo.jpg"></a></div>
-                            <div class="data">
-                                <div class="name"><a href="https://watchtvepisodes.me/cast/gregory-alan-williams/">Gregory
-                                        Alan Williams</a></div>
-                                <div class="caracter">Martin Imari</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="trailer" class="sbox fixidtab" style="display: none;"><h2>Video trailer</h2>
-                    <div class="videobox">
-                        <div class="embed">
-                            <iframe class="rptss" src="./episode_files/KqJRIQO7sqw.html" frameborder="0"
-                                    allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-                        </div>
-                    </div>
+                <div id="cast" class="sbox fixidtab" style="display: none;">
                 </div>
                 <div id="info" class="sbox fixidtab" style="display: block;"><h2>Synopsis</h2>
                     <div class="wp-content"><p>{{.Video.DeInfo}}</p>
@@ -212,14 +107,7 @@
                                         <div class="g-item"><a
                                                     href="{{.Video.ImgUrl}}"
                                                     title="{{.Video.DeName}}"><img alt="{{.Video.MovieName}}"
-                                                                                         src="{{.Video.ImgUrl}}"></a>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item" style="width: 260px;">
-                                        <div class="g-item"><a
-                                                    href="{{.Video.ImgUrl}}"
-                                                    title="{{.Video.DeName}}"><img alt="{{.Video.MovieName}}"
-                                                                                         src="{{.Video.ImgUrl}}"></a>
+                                                                                         src="{{.Video.ImgUrl}}" height="300px"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -262,18 +150,6 @@
                 <div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" tabindex="0">
                     <div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
                          style="position:relative; top:0; left:0;" dir="ltr">
-                        <aside id="text-18" class="widget widget_text"><h2 class="widget-title">Info :</h2>
-                            <div class="textwidget">
-                                <div class="info2">First click may open some <strong>ads</strong>. We know ads can be a
-                                    pain, but they are our only way to maintain the server. Your patience is highly
-                                    appreciated. Thank You!
-                                </div>
-                                <div class="info2">If you get Openload Video Ads, just Refresh the page to SKIP the Ads.
-                                    Also if you have questions you can visit our FAQ here : <strong><a
-                                                href="https://watchtvepisodes.me/faq/">Frequently Asked
-                                            Questions</a></strong></div>
-                            </div>
-                        </aside>
                         <style>.rpwe-block ul {
                                 list-style: none !important;
                                 margin-left: 0 !important;
@@ -422,105 +298,4 @@
             </div>
         </div>
     </div>
-    <footer class="main">
-        <div class="fbox">
-            <div class="fcmpbox">
-                <div class="primary">
-                    <div class="columenu">
-                    </div>
-                    <div class="fotlogo">
-                        <div class="logo">
-                            <img src="./episode_files/Logomare(1).png"
-                                               alt="WatchTVEpisodes | Watch Openload Movies Tv Shows Online For Free">
-                        </div>
-                    </div>
-                </div>
-                <span class="top-page"><a id="top-page"><i class="icon-angle-up"></i></a></span>
-                <div class="fmenu">
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
-<script type="text/javascript">jQuery(document).ready(function ($) {
-        $('#dt_galery').owlCarousel({
-            items: 3,
-            autoPlay: false,
-            itemsDesktop: [1199, 3],
-            itemsDesktopSmall: [980, 3],
-            itemsTablet: [768, 3],
-            itemsTabletSmall: false,
-            itemsMobile: [479, 1]
-        });
-        $('#dt_galery_ep').owlCarousel({items: 2, autoPlay: false});
-        $('#single_relacionados').owlCarousel({
-            items: 6,
-            autoPlay: 3000,
-            stopOnHover: true,
-            pagination: false,
-            itemsDesktop: [1199, 6],
-            itemsDesktopSmall: [980, 6],
-            itemsTablet: [768, 5],
-            itemsTabletSmall: false,
-            itemsMobile: [479, 3]
-        });
-        $('.reset').click(function (event) {
-            if (!confirm(dtGonza.reset_all)) {
-                event.preventDefault()
-            }
-        });
-        $('.addcontent').click(function (event) {
-            if (!confirm(dtGonza.manually_content)) {
-                event.preventDefault()
-            }
-        });
-    });
-    document.getElementById('dt_galery').onclick = function (a) {
-        a = a || window.event;
-        var b = a.target || a.srcElement, c = b.src ? b.parentNode : b, d = {index: c, event: a},
-            e = this.getElementsByTagName('a');
-        blueimp.Gallery(e, d)
-    };</script>
-<script type="text/javascript">
-    var wpcf7 = {
-        "apiSettings": {
-            "root": "https:\/\/watchtvepisodes.me\/wp-json\/contact-form-7\/v1",
-            "namespace": "contact-form-7\/v1"
-        }, "cached": "1"
-    };
-</script>
-<script type="text/javascript" src="./episode_files/scripts.js"></script>
-<script type="text/javascript" src="./episode_files/front.scripts.2.2.0.js"></script>
-<script type="text/javascript" src="./episode_files/comment-reply.min.js"></script>
-<script type="text/javascript">
-    var dtGonza = {
-        "api": "https:\/\/watchtvepisodes.me\/wp-json\/dooplay\/search\/",
-        "glossary": "https:\/\/watchtvepisodes.me\/wp-json\/dooplay\/glossary\/",
-        "nonce": "e17f2b22f3",
-        "area": ".live-search",
-        "button": ".search-button",
-        "more": "View all results",
-        "mobile": "false",
-        "reset_all": "Really you want to restart all data?",
-        "manually_content": "They sure have added content manually?",
-        "loading": "Loading..",
-        "loadingplayer": "Loading player..",
-        "selectaplayer": "Select a video player",
-        "playeradstime": null,
-        "autoplayer": "1",
-        "livesearchactive": ""
-    };
-</script>
-<script type="text/javascript" src="./episode_files/front.livesearch.2.2.0.js"></script>
-<script type="text/javascript" src="./episode_files/wp-embed.min.js"></script>
-<div id="oscuridad"></div>
-<div id="blueimp-gallery" class="blueimp-gallery">
-    <div class="slides"></div>
-    <h3 class="title"></h3> <a class="prev">‹</a> <a class="next">›</a> <a class="close">×</a> <a
-            class="play-pause"></a>
-    <ol class="indicator"></ol>
-</div>
-<script src="./episode_files/saved_resource"></script>
-<script src="./episode_files/c"></script>
-</body>
-</html>
+ {{template "common/footer.html"}}

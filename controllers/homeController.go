@@ -17,5 +17,6 @@ func (home *HomeController) Home() {
 	moviesList = models.QueryMovies(randPage)
 	home.Data["moviesList"] = moviesList
 	home.Data["movieCount"], _ = models.CountMovies()
+	home.Data["headerMovie"] = models.GetMovieByRandom(20)
 	home.TplName = "home.html"
 }

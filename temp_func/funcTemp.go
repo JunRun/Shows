@@ -13,3 +13,8 @@ func RandomImage() string {
 	return imageUrl
 
 }
+
+func EpisodeReplace(name string) string {
+	l := name[7:]
+	return l
+}

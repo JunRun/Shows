@@ -17,9 +17,10 @@
             </div>
         </div>
         <div class="module">
+
             <div class="content">
                 <div id="featload" class="load_modules">Loading..</div>
-                <header class="archive_post"><h1>Shows </h1><span>{{.moviesCount}}</span></header>
+                <header class="archive_post"><h1>{{.title}} </h1><span>{{.moviesCount}}</span></header>
 
                 <div id="archive-content" class="animation-2 items">
                     {{range .moviesList}}
@@ -57,33 +58,46 @@
                     <span>Page {{.PageIndex}} of {{.PageCount}}</span>
                     <span class="current">{{.PageIndex}}</span>
                     <a href='/movies/page/{{add .PageIndex 1}}/' class="inactive">{{add .PageIndex 1}}</a>
-                    <a href='/movies/page/{{add .PageIndex 1}}/' class="inactive">{{add .PageIndex 2}}</a>
+                    <a href='/movies/page/{{add .PageIndex 2}}/' class="inactive">{{add .PageIndex 2}}</a>
                     <a class='arrow_pag' href="/movies/page/{{add .PageIndex 2}}/">
                         <i id='nextpagination' class='icon-caret-right'>{{add .PageIndex 1}}</i>
                     </a>
                 </div>
                 <div class='resppages'>
-                    <a href="https://watchtvepisodes.me/movies/page//">
+                    <a href="/movies/page/{{add .PageIndex 1}}/">
                         <span class="icon-chevron-right"></span>
                     </a>
                 </div>
             </div>
-            <div class="sidebar scrolling">
-                <div class="fixed-sidebar-blank">
-                    <aside id="media_image-7" class="widget widget_media_image"><a href="/network/netflix/"><img
-                                    width="300" height="169"
-                                    src="{{randomImg}}"
-                                    class="image wp-image-93020 attachment-medium size-medium" alt=""
-                                    style="max-width: 100%; height: auto;"
-                                    srcset=""
-                                    sizes="(max-width: 300px) 100vw, 300px"/></a></aside>
-                        <div class="textwidget custom-html-widget"><a
-                                    href="https://watchtvepisodes.me/tvshows/the-walking-dead/"><img
-                                        src="{{randomImg}}" alt="" width="300" height="550"
-                                        class="alignnone size-full wp-image-95958"/></a></div>
-                    </aside>
-                </div>
-            </div>
+{{/*            <div class="sidebar scrolling">*/}}
+{{/*                <div class="fixed-sidebar-blank">*/}}
+{{/*                    <aside id="media_image-7" class="widget widget_media_image"><a href="/network/netflix/"><img*/}}
+{{/*                                    width="300" height="169"*/}}
+{{/*                                    src="{{randomImg}}"*/}}
+{{/*                                    class="image wp-image-93020 attachment-medium size-medium" alt=""*/}}
+{{/*                                    style="max-width: 100%; height: auto;"*/}}
+{{/*                                    srcset=""*/}}
+{{/*                                    sizes="(max-width: 300px) 100vw, 300px"/></a></aside>*/}}
+{{/*                        <div class="textwidget custom-html-widget"><a*/}}
+{{/*                                    href="https://watchtvepisodes.me/tvshows/the-walking-dead/"><img*/}}
+{{/*                                        src="{{randomImg}}" alt="" width="300" height="550"*/}}
+{{/*                                        class="alignnone size-full wp-image-95958"/></a></div>*/}}
+{{/*                    </aside>*/}}
+{{/*                </div>*/}}
+{{/*            </div>*/}}
         </div>
     </div>
+<style>
+    .module .content {
+
+        width: calc(100%);
+        margin-right: 340px;
+        padding: 20px;
+        float: left;
+        border-right: solid 1px;
+        border-right-color: currentcolor;
+
+    }
+</style>
+
  {{template "common/footer.html"}}

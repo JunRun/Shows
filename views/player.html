@@ -54,12 +54,12 @@
                         <div id="seasons">
                             <div class="se-c">
                                 <div class="se-a" style='display:block'>
-                                    {{range .List}}
+                                    {{range $index,$_:=.List}}
                                     <ul class="episodios">
-                                        <li class="mark-1">
-                                            <div class="numerando">{{.EpisodeNumber}}</div>
+                                        <li class="mark-{{$index}}">
+                                            <div class="numerando">1 - {{episodeReplace .EpisodeNumber}}</div>
                                             <div class="episodiotitle"><a
-                                                        href="/episode/player/{{.Id}}">{{.EpisodeName}}</a>
+                                                        href="/episode/player/{{.Id}}">{{.EpisodeNumber}}</a>
                                                 <span class="date"></span></div>
                                         </li>
                                             {{end}}
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div id="info" class="sbox">
-                    <h1 class="epih1">{{.EpisodeName}}</h1>
+                    <h1 class="epih1">{{.EpisodeNumber}}</h1>
                     <div itemprop="description" class="wp-content">
                         <h3 class="epih3"></h3>
                         <p>{{.Info}}</p>

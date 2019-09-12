@@ -96,26 +96,27 @@ func TestEn(t *testing.T) {
 		sy1.Add(1)
 		id := movie.Id
 		info := movie.Info
+		tags := movie.MovieType
 		pool <- 1
 		go func(id string, info string, name string) {
 			defer func() {
 				<-pool
 				sy1.Done()
 			}()
-			nameUrl := fmt.Sprintf("https://translate.dollarkiller.com/translate?sl=&tl=de&text=%s", name)
-			tarUrl := fmt.Sprintf("https://translate.dollarkiller.com/translate?sl=&tl=de&text=%s", info)
-			url, er := easyutils.UrlEncoding(tarUrl)
+			nameUrl := fmt.Sprintf("https://translate.dollarkiller.com/translate?sl=&tl=de&text=%s", tags)
+			//tarUrl := fmt.Sprintf("https://translate.dollarkiller.com/translate?sl=&tl=de&text=%s", info)
+			//url, er := easyutils.UrlEncoding(tarUrl)
 			NUrl, err := easyutils.UrlEncoding(nameUrl)
-			if er != nil {
-				panic(movie.Info + " -----描述错误")
-			}
+			//if er != nil {
+			//	panic(movie.Info + " -----描述错误")
+			//}
 			if err != nil {
 				panic(name + " -----------------------名字信息错误")
 			}
 		ki:
-			bytes := httplib.Get(url)
+			//bytes := httplib.Get(url)
 			nameBytes := httplib.Get(NUrl)
-			s, e := bytes.String()
+			//s, e := bytes.String()
 			l, e := nameBytes.String()
 
 			if e != nil {
@@ -124,15 +125,15 @@ func TestEn(t *testing.T) {
 				goto ki
 			}
 
-			var res Res
+			//var res Res
 			var nameRes Res
-			if err := json.Unmarshal([]byte(s), &res); err == nil {
-
-			}
+			//if err := json.Unmarshal([]byte(s), &res); err == nil {
+			//
+			//}
 			if err := json.Unmarshal([]byte(l), &nameRes); err == nil {
 			}
 
-			_, e = o.Raw("update movie set de_info =?,de_name=? where id = ?", res.Msg, nameRes.Msg, id).Exec()
+			_, e = o.Raw("update movie set movie_type = ? where id = ?", nameRes.Msg, id).Exec()
 
 		}(id, info, movie.MovieName)
 	}
@@ -151,4 +152,11 @@ func TestUrlEnco(t *testing.T) {
 	if err == nil {
 		t.Log(s)
 	}
+}
+
+func TestString(t *testing.T) {
+	name := "Episode20"
+	l := name[7:]
+	fmt.Println(l)
+
 }

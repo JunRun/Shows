@@ -3,6 +3,8 @@ package models
 import (
 	"github.com/astaxie/beego/orm"
 	"math"
+	"math/rand"
+	"time"
 )
 
 type Movie struct {
@@ -55,5 +57,12 @@ func GetMovieByType(tags string) []Movie {
 	var movie []Movie
 	o := orm.NewOrm()
 	_, _ = o.Raw("select * from movie where movie_type like ?", "%"+tags+"%").QueryRows(&movie)
+	return movie
+}
+func GetMovieByRandom(num int) []Movie {
+	var movie []Movie
+	o := orm.NewOrm()
+	rand.Seed(time.Now().UnixNano())
+	_, _ = o.Raw("select * from movie order by movie_mark limit ?,10", rand.Intn(num)).QueryRows(&movie)
 	return movie
 }

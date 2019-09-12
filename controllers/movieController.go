@@ -18,6 +18,7 @@ func (m *MovieController) Movies() {
 	m.Data["PageIndex"] = pageIndex
 	m.Data["moviesList"] = models.QueryMovies(pageIndex)
 	m.Data["moviesCount"], m.Data["PageCount"] = models.CountMovies()
+	m.Data["title"] = "Shows"
 	m.TplName = "movies.html"
 }
 
@@ -58,4 +59,21 @@ func (m *MovieController) GetMovieByTags() {
 	m.Data["PageCount"] = 1
 	m.TplName = "movies.html"
 
+}
+func (m *MovieController) GetMovieByRandom() {
+	m.Data["moviesList"] = models.GetMovieByRandom(100)
+	m.Data["PageIndex"] = 1
+	m.Data["moviesCount"] = 20
+	m.Data["PageCount"] = 1
+	m.Data["title"] = "zufällige Show"
+	m.TplName = "movies.html"
+}
+
+func (m *MovieController) GetMovieLasted() {
+	m.Data["moviesList"] = models.GetMovieByRandom(150)
+	m.Data["PageIndex"] = 1
+	m.Data["moviesCount"] = 20
+	m.Data["PageCount"] = 1
+	m.Data["title"] = "dauerte Show"
+	m.TplName = "movies.html"
 }
