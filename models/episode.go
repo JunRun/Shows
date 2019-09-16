@@ -43,7 +43,7 @@ func GetEpisodeUrl(episodeId string) (string, string) {
 
 	}
 	if list == nil {
-		return "", ""
+		return "", episode.MovieId
 	}
 	var playerPath string
 	for _, x := range list {
