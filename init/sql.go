@@ -8,6 +8,7 @@ import (
 )
 
 func init() {
+
 	orm.Debug = true
 	fmt.Println(beego.AppConfig.String("mysql_username"))
 	username := beego.AppConfig.String("mysql_username")
