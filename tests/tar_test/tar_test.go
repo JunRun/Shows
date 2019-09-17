@@ -48,7 +48,8 @@ func TestTar(t *testing.T) {
 				<-pool
 				sy1.Done()
 			}()
-			tarUrl := fmt.Sprintf("https://translate.dollarkiller.com/translate?sl=&tl=de&text=%s", info)
+			//西班牙语  澳大利亚语
+			tarUrl := fmt.Sprintf("https://translate.dollarkiller.com/translate?sl=de&tl=es&text=%s", info)
 			url, er := easyutils.UrlEncoding(tarUrl)
 			if er != nil {
 				panic(episode.EpisodeInfo + " -----错误")
