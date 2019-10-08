@@ -20,13 +20,13 @@
             <div class="content">
                 <div class="sheader">
                     <div class="poster"><img src="{{.Video.ImgUrl}}"
-                                             alt="{{.VIdeo.MovieName}}"></div>
-                    <div class="data"><h1>{{.VIdeo.MovieName}}</h1>
-                        <div class="extra"><span class="date">Aug. 18, 2019</span> <span><a
-                                        href="https://watchtvepisodes.me/network/hbo/" rel="tag">HBO</a></span></div>
+                                             alt="{{.Video.MovieName}}"></div>
+                    <div class="data"><h1>{{.Video.MovieName}}</h1>
+                        <div class="extra">
+                        </div>
                         <div class="starstruck-ptype" style="">
                             <div itemscope="" itemtype="http://schema.org/Service">
-                                <meta itemprop="name" content="{{.VIdeo.MovieName}}">
+                                <meta itemprop="name" content="{{.Video.MovieName}}">
                                 <div itemscope="" class="starstruck-wrap" itemprop="aggregateRating"
                                      itemtype="http://schema.org/AggregateRating">
                                     <meta itemprop="bestRating" content="10">
@@ -51,21 +51,19 @@
                         </div>
                         </div>
                     </div>
-                </div>
                 <div id="episodes" class="sbox fixidtab" style="display: none;"><h2>Seasons and episodes</h2>
                     <div id="serie_contenido">
                         <div id="seasons">
                             <div class="se-c">
-                                <div class="se-q"><span class="se-t se-o">1</span><span class="title">Season 1 <i>Aug. 18, 2019</i></span>
+                                <div class="se-q"><span class="se-t se-o">1</span><span class="title">Seasons </span>
                                 </div>
                                 <div class="se-a" style="display:block">
                                     <ul class="episodios">
                                         {{range .List}}
-                                        <li>
-                                            <div class="numerando">1 - {{episodeReplace .EpisodeNumber}} </div>
-                                            <div class="episodiotitle"><a href="/episode/player/{{.Id}}">
-                                                    {{.EpisodeNumber}}</a><span class="date"></span></div>
-                                        </li>
+                                            <li>
+                                                <div class="numerando">1 - {{episodeReplace .EpisodeNumber}} </div>
+                                                <div class="episodiotitle"><a href="/episode/player/{{.Id}}">{{$.Video.MovieName}}  {{.EpisodeNumber}}</a><span class="date"></span></div>
+                                            </li>
                                         {{end}}
                                     </ul>
                                 </div>
@@ -73,6 +71,37 @@
                         </div>
                     </div>
                 </div>
+                <div id="info" class="sbox fixidtab" style="display: block;"><h2>Synopsis</h2>
+                    <div class="wp-content"><p>{{.Video.DeInfo}}</p>
+                        <div id="dt_galery" class="galeria owl-carousel owl-theme" style="opacity: 1; display: block;">
+                            <div class="owl-wrapper-outer">
+                                <div class="owl-wrapper"
+                                     style="width: 1040px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+                                    <div class="owl-item" style="width: 260px;">
+                                        <div class="g-item"><a
+                                                    href="{{.Video.ImgUrl}}"
+                                                    title="{{.Video.DeName}}"><img alt="{{.Video.MovieName}}"
+                                                                                   src="{{.Video.ImgUrl}}" height="300px"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="owl-controls clickable" style="display: none;">
+                                <div class="owl-pagination">
+                                    <div class="owl-page"><span class=""></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom_fields"><b class="variante">Originaler Titel</b>
+                        <span class="valor">{{.Video.DeName}}</span>
+                    </div>
+                    <div class="custom_fields"><b class="variante">Stichworte</b> <span class="valor">{{.Video.MovieType}}</span></div>
+                    <div class="custom_fields"><b class="variante">Episodes</b> <span class="valor">6</span></div>
+                    <div class="custom_fields"><b class="variante">Duration</b> <span class="valor">60m</span></div>
+                </div>
+
+            </div>
                 <script>jQuery(document).ready(function ($) {
                         $(".se-q").click(function () {
                             var container = $(this).parents(".se-c");
@@ -88,59 +117,30 @@
                     });</script>
                 <div class="single_tabs">
                     <ul id="section" class="smenu idTabs">
-                        <li><a href="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/#episodes" class="">Episodes</a>
+                        <li><a href="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/#episodes" class="selected">Episodes</a>
                         </li>
-                        <li><a href="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/#info" class="selected">Info</a>
+                        <li><a href="https://watchtvepisodes.me/tvshows/the-righteous-gemstones/#info" class="">Die Info</a>
                         </li>
                         </li>
                     </ul>
                 </div>
                 <div id="cast" class="sbox fixidtab" style="display: none;">
                 </div>
-                <div id="info" class="sbox fixidtab" style="display: block;"><h2>Synopsis</h2>
-                    <div class="wp-content"><p>{{.Video.DeInfo}}</p>
-                        <div id="dt_galery" class="galeria owl-carousel owl-theme" style="opacity: 1; display: block;">
-                            <div class="owl-wrapper-outer">
-                                <div class="owl-wrapper"
-                                     style="width: 1040px; left: 0px; display: block; transition: all 0ms ease 0s; transform: translate3d(0px, 0px, 0px);">
-                                    <div class="owl-item" style="width: 260px;">
-                                        <div class="g-item"><a
-                                                    href="{{.Video.ImgUrl}}"
-                                                    title="{{.Video.DeName}}"><img alt="{{.Video.MovieName}}"
-                                                                                         src="{{.Video.ImgUrl}}" height="300px"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-controls clickable" style="display: none;">
-                                <div class="owl-pagination">
-                                    <div class="owl-page"><span class=""></span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="custom_fields"><b class="variante">Original title</b>
-                        <span class="valor">{{.Video.DeName}}</span>
-                    </div>
-                    <div class="custom_fields"><b class="variante">Stichworte</b> <span class="valor">{{.Video.MovieType}}</span></div>
-                    <div class="custom_fields"><b class="variante">Episodes</b> <span class="valor">6</span></div>
-                    <div class="custom_fields"><b class="variante">Duration</b> <span class="valor">60m</span></div>
-                </div>
                 <div class="dt-breadcrumb breadcrumb_bottom">
                     <ol vocab="http://schema.org/" typeof="BreadcrumbList">
                         <li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage"
-                                                                            href="https://watchtvepisodes.me/"><span
-                                        property="name">Home</span></a><span class="icon-angle-right"
+                                                                            href="/home"><span
+                                        property="name">Zuhause</span></a><span class="icon-angle-right"
                                                                              property="position" content="1"></span>
                         </li>
                         <li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage"
-                                                                            href="https://watchtvepisodes.me/tvshows/"><span
-                                        property="name">TV Shows</span></a><span class="icon-angle-right"
+                                                                            href="/movie"><span
+                                        property="name">Anime</span></a><span class="icon-angle-right"
                                                                                  property="position" content="2"></span>
                         </li>
                         <li property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage"
                                                                             href="/episode/{{.Video.Id}}}"><span
-                                        property="name">{{.VIdeo.MovieName}}</span></a><span property="position"
+                                        property="name">{{.Video.MovieName}}</span></a><span property="position"
                                                                                                 content="3"></span></li>
                     </ol>
                 </div>
@@ -209,7 +209,10 @@
                                 display: inline;
                                 float: right
                             }
-
+                            .wp-content img {
+                                max-width: 36%;
+                                height: auto;
+                            }
                             .rpwe-aligncenter {
                                 display: block;
                                 margin-left: auto;

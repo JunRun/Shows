@@ -63,14 +63,14 @@
                         <li id="menu-item-97537" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-97537">
                             <a href="/home" aria-current="page">Zuhause</a></li>
                         <li id="menu-item-16" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16">
-                            <a href="/movies">Show</a>
+                            <a href="/movies">Anime</a>
                             <ul class="sub-menu">
                                  <li id="menu-item-8799" class="menu-item menu-item-type-taxonomy menu-item-object-genres menu-item-8799">
                                     <a href="/movies">Nach Bewertung &nbsp;&nbsp;&nbsp;&nbsp;sortieren</a></li>
                                 <li id="menu-item-8799" class="menu-item menu-item-type-taxonomy menu-item-object-genres menu-item-8799">
-                                    <a href="/movies/random">zufällige Show</a></li>
+                                    <a href="/movies/random">zufällige Anime</a></li>
                                 <li id="menu-item-8799" class="menu-item menu-item-type-taxonomy menu-item-object-genres menu-item-8799">
-                                    <a href="/movies/lasted">dauerte Show</a></li>
+                                    <a href="/movies/lasted">dauerte Anime</a></li>
                             </ul>
                         </li>
                         <li id="menu-item-24" class="genres menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-24">
@@ -135,7 +135,8 @@
                             alt='logo'/></a></div>
         </header>
         <div class="search_responsive">
-            <form method="get" id="form-search-resp" class="form-resp-ab" action="https://watchtvepisodes.me"><input
+            <form method="get" id="form-search-resp" class="form-resp-ab" action="/home/movies/name">
+                <input
                         type="text" placeholder="Search..." name="s" id="ms" value="" autocomplete="off">
                 <button type="submit" class="search-button"><span class="icon-search3"></span></button>
             </form>
@@ -148,7 +149,7 @@
                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-97537"><a href="/home">Zuhause</a>
                         </li>
                         <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current-menu-ancestor current-menu-parent menu-item-has-children menu-item-16">
-                            <a href="/movies" aria-current="page">Show</a>
+                            <a href="/movies" aria-current="page">Anime</a>
                             <ul class="sub-menu">
                                 <li id="menu-item-8799" class="menu-item menu-item-type-taxonomy menu-item-object-genres menu-item-8799">
                                     <a href="/movies">Nach Bewertung &nbsp;&nbsp;&nbsp;&nbsp;sortieren</a></li>
@@ -203,5 +204,9 @@
         header.main .hbox .logo img {
             width: auto;
             height: 45px;
+        }
+        header.responsive .logo img {
+            width: auto;
+            height: 65px
         }
     </style>

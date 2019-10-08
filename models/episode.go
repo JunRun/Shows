@@ -28,7 +28,7 @@ type M3u8 struct {
 func GetEpisodeList(movieId string) []Episode {
 	o := orm.NewOrm()
 	var list []Episode
-	_, _ = o.Raw("select * from  episode where movie_id = ?", movieId).QueryRows(&list)
+	_, _ = o.Raw("select * from  episode where movie_id = ? order by id desc", movieId).QueryRows(&list)
 	return list
 }
 
